@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
 
+:root {
+  --background: #1f2937;
+  --hover-background: #303c50;
+  --font-primary: #f9faf8;
+  --font-background-secondary: #e5e7eb;
+  --font-tertiary: #4c5564;
+  --button-call-to-action: #3882f6;
+  --hover-button: #376bbd;
+  --white: #fff;
+}
+
 body {
   display: flex;
   font-family: "Roboto", sans-serif;
@@ -7,11 +18,15 @@ body {
   margin: 0;
 }
 
-/* HEADER */
+.header-content,
+.hero-content {
+  flex-basis: 1000px;
+}
 
+/* HEADER */
 .header,
 .hero {
-  background-color: #1f2937;
+  background-color: var(--background);
   display: flex;
   justify-content: center;
 }
@@ -20,18 +35,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-basis: 1000px;
-  padding: 8px;
 }
 
 a {
   text-decoration: none;
   padding: 8px 12px;
   transition: 300ms;
+  text-align: center;
 }
 
 .nav-links a:hover {
-  background-color: #303c50;
+  background-color: var(--hover-background);
   border-radius: 8px;
 }
 
@@ -43,49 +57,49 @@ ul {
 
 .logo {
   font-size: 24px;
+  text-align: center;
 }
 
 .nav-links a,
-p {
-  color: #e5e7eb;
+p.hero-description {
+  color: var(--font-background-secondary);
   font-size: 18px;
 }
 
 .logo a {
-  color: #f9faf8;
+  color: var(--font-primary);
   font-weight: 700;
 }
 
-/* HERO  48px extra-bold #F9FAF8 */
-
+/* HERO */
 h1 {
-  color: #f9faf8;
+  color: var(--font-primary);
   font-size: 48px;
   font-weight: 700;
 }
 
 .hero {
-  /* padding: 64px 0 100px 0; */
   display: flex;
-  height: 400px;
+  height: 450px;
   justify-content: center;
   align-items: center;
+  padding-bottom: 16px;
 }
 
 .hero-content {
   display: flex;
-  flex-basis: 1000px;
   align-items: center;
 }
 
 .hero-image-place-holder {
   align-items: center;
   align-self: stretch;
-  background-color: #6e747e;
-  color: #e5e7eb;
+  background-color: gray;
+  color: var(--font-background-secondary);
   display: flex;
   justify-content: center;
   width: 50%;
+  margin: 0 12px;
 }
 
 .hero-info {
@@ -94,22 +108,102 @@ h1 {
   width: 50%;
 }
 
-.hero-description, .hero-info h1 {
-    margin: 0 64px 24px 0;
+.hero-description,
+.hero-info h1 {
+  margin: 0 64px 24px 0;
 }
 
 .hero-button {
-    background-color: #3882F6;
-    border: 0;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #f9faf9;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 8px 32px;
-    transition: 300ms;
+  background-color: var(--button-call-to-action);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #f9faf9;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 32px;
+  transition: 300ms;
 }
 
 .hero-button:hover {
-    background-color: #376bbd;
+  background-color: var(--hover-button);
+}
+
+/* INFO */
+.info {
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 350px;
+  padding-bottom: 48px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 38px 0;
+  text-align: center;
+}
+
+.info-image-place-holder {
+  border: 2px;
+  width: 125px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 64px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.card .info-image-place-holder{
+ border: solid 4px var(--button-call-to-action);
+ border-radius: 16px;
+ aspect-ratio: 1/1;
+}
+
+.info-image-description {
+  text-align: center;
+  width: 150px;
+  color: var(--font-tertiary);
+}
+
+/* QUOTE */
+
+.quote {
+  background-color: var(--font-background-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.quote-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-content p {
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  margin: 18px 48px;
+  width: 750px;
+}
+
+div.quote-author {
+  align-self: flex-end;
+  font-size: 24px;
+  font-weight: 700;
 }
